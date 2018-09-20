@@ -24,12 +24,16 @@ while : ; do
 done
 
 # install package
-yum install mysql-server
+yum -y install mysql-server
 
 # start service
 service mysqld start
 
 # set root passwd
 mysqladmin -u root password $PASSWORD1
+
+# boot
 chkconfig mysqld on
 
+# info
+mysql -V
