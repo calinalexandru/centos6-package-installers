@@ -23,5 +23,13 @@ while : ; do
     [[ "$PASSWORD1" != "$PASSWORD2" ]] || break
 done
 
-/usr/bin/mysqladmin -u root password $PASSWORD1
+# install package
+yum install mysql-server
+
+# start service
+service mysqld start
+
+# set root passwd
+mysqladmin -u root password $PASSWORD1
+chkconfig mysqld on
 
