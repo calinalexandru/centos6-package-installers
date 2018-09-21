@@ -3,7 +3,6 @@ clear
 
 source ./_shared/util.sh
 
-
 main() {
     logo
     log info "This script is designed to serve as a version control system(VCS) for php."
@@ -40,7 +39,9 @@ main() {
     # include module lib
     modules=$(./php/modules-php.sh $VERSION_DIGITS)
 
-    yum -y install php$VERSION_DIGITS $modules || log error "could not install php/php-modules" && exit 2
+    line="yum -y install php php$VERSION_DIGITS $modules"
+    log cmd "'$line'"
+    $(cmd) || log error "packages could not be installed" && exit 2
 
     #yum -y install php php-${VERSION_DIGITS}mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
     #echo php -v
