@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 module_name(){
-    echo "php$1-php-$2"
+    echo "php-$2 php$1-php-$2"
 }
 
 main() {
