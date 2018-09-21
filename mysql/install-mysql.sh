@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-clear
 
 PASSWORD1=''
 PASSWORD2=''
