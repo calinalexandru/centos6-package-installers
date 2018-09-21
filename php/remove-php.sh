@@ -13,11 +13,11 @@ main() {
         modules=$(./php/modules-php.sh $v)
         line="yum -y remove php php$v $modules"
         log cmd "'$line'"
-        $(line) || log error "could not remove packages" && exit 2
+        $($line) || log error "could not remove packages" && exit 2
     elif
         line="yum -y remove php"
         log cmd "'$line'"
-        $(line) || log error "could not remove packages" && exit 2
+        $($line) || log error "could not remove packages" && exit 2
     fi 
     
 }
