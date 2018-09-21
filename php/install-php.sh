@@ -30,9 +30,9 @@ main() {
         log info "installing default repo version"
     else
         log info "installing version: ${VERSION}"
-        yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm || log error "could not add repo" && exit 2
-        yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm || log error "could not add repo" && exit 2 2
-        yum -y install yum-utils || log error "could not fetch yum-utils" && exit 2
+        yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+        yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm
+        yum -y install yum-utils
         yum-config-manager --enable remi-php${VERSION_DIGITS}
     fi
 
