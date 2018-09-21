@@ -41,7 +41,7 @@ main() {
 
     line="yum -y install php php$VERSION_DIGITS $modules"
     log cmd "'$line'"
-    $($line) || log error "packages could not be installed" && exit 2
+    $(echo $line) || log error "packages could not be installed" && exit 2
 
     #yum -y install php php-${VERSION_DIGITS}mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
     #echo php -v

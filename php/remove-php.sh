@@ -8,16 +8,16 @@ main() {
 
     v=$(only_digits $(get_php_version))
 
-    if [[ $v != "" ]; then
+    if [ $v != "" ]; then
         # include module lib
         modules=$(./php/modules-php.sh $v)
         line="yum -y remove php php$v $modules"
         log cmd "'$line'"
-        $($line) || log error "could not remove packages" && exit 2
-    elif
+        $(echo $line) || log error "could not remove packages" && exit 2
+    else 
         line="yum -y remove php"
         log cmd "'$line'"
-        $($line) || log error "could not remove packages" && exit 2
+        $(echo $line) || log error "could not remove packages" && exit 2
     fi 
     
 }
