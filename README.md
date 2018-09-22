@@ -1,25 +1,21 @@
-CentOS6 popular packages installer:
+CentOS 6 package installer:
 ==========================
 
-Run as root / use sudo
+Useful for projects that use modern web frameworks: Symfony3, Symfony4, Laravel, Lumen, etc.
 
-Install LAMP
------
-runs apache/mysql/php installers using default repo
-
-    curl https://raw.githubusercontent.com/calinalexandru/centos6-package-installers/master/php/install-php.sh | sh
-
-Install PHP 6.x, 7.x
------
-you can specify version, this will update/change your repos.
-
-don't pipe the curl result into bash because that will break the user prompting!
-
+First, you should clone the entire repo and from the present directory update the permissions, like this: 
     
-    curl https://raw.githubusercontent.com/calinalexandru/centos6-package-installers/master/php/install-php.sh
-    sh php/install-php.sh
+    chmod -R +x .
+
+Install LAMP (quick install)
+-----
+runs apache/mysql/php installers using default repo: 
+
+    sudo ./install-lamp.sh
+
+Install PHP 6.x, 7.x (interactive install)
+-----
+you can specify version, this will update/change your repos:
+
+    sudo ./php/install-php.sh
     
-    Installing php...
-    Choose version (press enter for default repo)
-    (eg: 5,6 | 7.1 | 7,2 | 73 | ... )
-    version:
