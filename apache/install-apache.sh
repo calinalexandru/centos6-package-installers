@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO:: advanced repo checkign
+
 # install package
 yum -y install httpd
 

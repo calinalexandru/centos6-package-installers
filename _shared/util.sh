@@ -9,9 +9,11 @@ log() {
 
     if [[ "$1" = "error" ]]; then
         pre="; SCRIPT EXITED SUDDENLY!!! ;;\n"
+    elif [[ $1 = "cmd" ]]; then
+        pre="[COMMAND]"
     fi
 
-    echo -e ";$pre; $2"
+    echo ";$pre; $2"
 }
 
 get_version_input() {
@@ -30,5 +32,4 @@ only_digits() {
 
 logo() {
     cat ./php/ascii
-    echo -e "\n"
 }

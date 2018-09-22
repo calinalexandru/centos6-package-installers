@@ -1,0 +1,18 @@
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.pidginhost.com
+ * epel: mirrors.nav.ro
+ * extras: mirrors.xservers.ro
+ * remi-php72: mirrors.netix.net
+ * remi-safe: mirrors.netix.net
+ * updates: mirrors.xservers.ro
+repo id                                                                  repo name                                                                                                                    status
+base                                                                     CentOS-6 - Base                                                                                                               6,713
+epel                                                                     Extra Packages for Enterprise Linux 6 - x86_64                                                                               12,520
+extras                                                                   CentOS-6 - Extras                                                                                                                33
+remi-php72                                                               Remi's PHP 7.2 RPM repository for Enterprise Linux 6 - x86_64                                                                   300
+remi-safe                                                                Safe Remi's RPM repository for Enterprise Linux 6 - x86_64                                                                    2,661
+updates                                                                  CentOS-6 - Updates                                                                                                              125
+vz-base                                                                  vz-base                                                                                                                           3
+vz-updates                                                               vz-updates                                                                                                                        8
+repolist: 22,363
