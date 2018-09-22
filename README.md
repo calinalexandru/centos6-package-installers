@@ -1,21 +1,22 @@
-CentOS 6 package installer:
-==========================
 
-Useful for projects that use modern web frameworks: Symfony3, Symfony4, Laravel, Lumen, etc.
+    ** dev release currently **
+
+# CentOS 6 package installers:
+
+>useful for projects that use modern web frameworks: Symfony3, Symfony4, Laravel, Lumen, etc.
 
 First, you should clone the entire repo and from the present directory update the permissions, like this: 
     
     chmod -R +x .
 
-Install LAMP (quick install)
------
-runs apache/mysql/php installers using default repo: 
+### install php, apache, mysql - quick install
+run each installers using RPM stable version: 
 
     sudo ./install-lamp.sh
 
-Install PHP 6.x, 7.x (interactive install)
------
-you can specify version, this will update/change your repos:
+### install php 6.x, 7.x - interactive install
+>appends [remirepo](https://rpms.remirepo.net/)_ to your RPM package list.
 
     sudo ./php/install-php.sh
-    
+## notes
+> - PHP scripts will require (automatically): [remirepo](https://rpms.remirepo.net/)

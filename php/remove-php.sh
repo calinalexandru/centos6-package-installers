@@ -29,13 +29,16 @@ main() {
         modules=$(./php/modules-php.sh $v)
         line="yum -y remove php php-* php$v $modules"
         log cmd "'$line'"
-        echo $($line) || log error "could not remove packages" && exit 2
+        $($line) || log error "could not remove packages" && exit 2
     else
         line="yum -y remove php php-*"
         log cmd "'$line'"
-        echo $($line) || log error "could not remove packages" && exit 2
+        $($line) || log error "could not remove packages" && exit 2
     fi
-    
+
+    line="yum clean all"
+
+    $($line)
 }
 
 main

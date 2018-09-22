@@ -29,7 +29,6 @@ main() {
         log info "installing default repo version"
     else
         log info "installing version: ${VERSION}"
-        yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
         yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm
         yum -y install yum-utils
         yum-config-manager --enable remi-php${VERSION_DIGITS}
