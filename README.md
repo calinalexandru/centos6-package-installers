@@ -12,7 +12,7 @@ First, you should clone the entire repo and from the present directory update th
 ### install php, apache, mysql - quick install
 run each installers using RPM stable version: 
 
-    sudo ./install-lamp.sh
+    sudo ./install-quick.sh
 
 ### install php 6.x, 7.x - interactive install
 >appends [remirepo](https://rpms.remirepo.net/)_ to your RPM package list.

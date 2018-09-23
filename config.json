@@ -1,2 +1,6 @@
 // TODO :: add config items
-
+{
+  "apache" : {},
+  "mysql" : {},
+  "php" : {}
+}
