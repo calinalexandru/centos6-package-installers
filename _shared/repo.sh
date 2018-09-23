@@ -74,7 +74,7 @@ get_installed_remi_repos() {
 
     # return
     line=$(echo $($repolist | grep -o $regex))
-    instr "$line" "check for remi repos"
+    log info "'$line'"
 
     echo "$line"
 }
