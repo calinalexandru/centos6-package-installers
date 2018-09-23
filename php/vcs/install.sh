@@ -52,7 +52,7 @@ main() {
 
     instr "php -v" "checking php version.."
     echo $(green)
-    php -v
+    echo $(php -v)
     echo $(clear)
 
     log info "Goodbye!"

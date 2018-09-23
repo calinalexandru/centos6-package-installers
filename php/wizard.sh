@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-
-# import libs
 source ./_shared/util.sh
 source ./_shared/repo.sh
+
+clear
 
 main() {
     logo

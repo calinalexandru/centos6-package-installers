@@ -83,7 +83,6 @@ only_digits() {
 }
 
 logo() {
-    clear
     echo -e $(light_blue) && cat ./php/ascii && echo -e $(clear)
 }
 
