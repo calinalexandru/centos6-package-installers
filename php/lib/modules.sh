@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
-module_name(){
-    echo "php-$2 php$1-php-$2"
+module_name() {
+    # use normal naming for default vers (php-curl, php-xml)
+    if [ "$1" = "0" ]; then
+        echo "php-$2"
+
+    # && version naming (php-curl php72-php-curl, php-xml php72-php-xml)
+    else
+        echo "php-$2 php$1-php-$2"
+    fi
 }
 
 main() {

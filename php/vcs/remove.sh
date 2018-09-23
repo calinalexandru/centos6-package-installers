@@ -5,8 +5,7 @@ source ./_shared/util.sh
 source ./_shared/repo.sh
 
 main() {
-    logo
-    log info "This script will remove php & co"
+    log info "cleaning up previous installations.."
     log info "(swoosh)"
 
     remi=$(get_installed_remi_repos)
@@ -16,7 +15,7 @@ main() {
 
     v=$(only_digits $(get_php_version))
     if [ $v != "" ]; then
-        modules=$(./php/modules-php.sh $v)
+        modules=$(./php/lib/modules.sh $v)
         line="yum -y remove php php-* php$v $modules"
         log cmd "removing packages" "$line" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
     else
