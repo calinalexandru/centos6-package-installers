@@ -29,21 +29,21 @@ main() {
     if [ "${VERSION}" = "" ]; then
         log info "installing default repo version"
     else
-        log info "installing version: ${VERSION}"
+        log info "fetching PHP version: ${VERSION}"
         if [[ $(repo_missing) = "1" ]]; then
             repo_install
         fi
 
-#        if [[ repo_not_configured = "1" ]]; then
-#            repo_enable $VERSION_DIGITS
-#        fi
+        if [[ $(repo_not_configured) = "1" ]]; then
+            repo_enable $VERSION_DIGITS
+        fi
     fi
 
     # install packages & base modules
     # include module lib
     modules=$(./php/modules-php.sh $VERSION_DIGITS)
     line="yum -y install php php$VERSION_DIGITS $modules"
-    log cmd "installing packages via: '$line'" & $($line > /dev/null 2>&1) || log error "failed to install php & co" & spinner
+    log cmd "installing packages:" "$line" & $($line > /dev/null 2>&1) || log error "failed to install php & co" & spinner
     #echo php -v
 
     log info "Goodbye!"

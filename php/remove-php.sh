@@ -18,14 +18,14 @@ main() {
     if [ $v != "" ]; then
         modules=$(./php/modules-php.sh $v)
         line="yum -y remove php php-* php$v $modules"
-        log cmd "removing packages via: '$line'" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
+        log cmd "removing packages" "$line" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
     else
         line="yum -y remove php php-*"
-        log cmd "removing packages via: '$line'" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
+        log cmd "removing packages" "$line" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
     fi
 
     line="yum clean all"
-    log cmd "'$line'" & $($line > /dev/null 2>&1) || log error "failed to clean repository" & spinner
+    log cmd "attempting to clean repository" "$line" & $($line > /dev/null 2>&1) || log error "failed to clean repository" & spinner
 }
 
 main

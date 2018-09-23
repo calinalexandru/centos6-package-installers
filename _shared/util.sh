@@ -12,8 +12,6 @@ get_php_version(){
 
 log() {
     pre=''
-
-
     if [[ "$1" = "error" ]]; then
         pre="$(light_red)E$(clear)"
 
@@ -28,7 +26,16 @@ log() {
     fi
 
     spit "$(dim);$(clear)$pre$(dim);$(clear) ${yellow_bg}$2$c"
+
+    if [[ $3 != "" ]]; then
+        spit "$(dim)'$3'$(clear)"
+    fi
 }
+
+#log_cmd() {
+#    log $1
+#}
+
 
 get_version_input() {
     read -r VERSION

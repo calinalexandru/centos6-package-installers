@@ -2,17 +2,17 @@
 source "./_shared/util.sh"
 repo_install() {
     line="yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm"
-    log info "registering repos via: '$line'" & $($line > /dev/null 2>&1) || log error "failed to register repo" & spinner
+    log cmd "registering repos" "$line" & $($line > /dev/null 2>&1) || log error "failed to register repo" & spinner
 }
 
 repo_enable() {
     line="yum-config-manager --enable $1"
-    log info "enable repo" & $($line > /dev/null 2>&1) || log error "failed to enable repo" & spinner
+    log cmd "enabling repo" "$line" & $($line > /dev/null 2>&1) || log error "failed to enable repo" & spinner
 }
 
 repo_disable() {
     line="yum-config-manager --disable $1"
-    log info "attempting to disable repo: '$line' " & $($line > /dev/null 2>&1) || log error "failed to disable repo" & spinner
+    log cmd "disabling repo" "$line" & $($line > /dev/null 2>&1) || log error "failed to disable repo" & spinner
 }
 
 repo_missing() {
