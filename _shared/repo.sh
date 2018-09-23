@@ -36,6 +36,37 @@ repo_check() {
     echo "0"
 }
 
+# for versions 5.3, 5.4, 5.5
+repo_install68() {
+    line="wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
+    log cmd ".." "$line" & $($line > /dev/null 2>&1) || log error ".." & spinner
+
+    line="rpm -Uvh epel-release-6-8.noarch.rpm"
+    log cmd ".." "$line" & $($line > /dev/null 2>&1) || log error ".." & spinner
+
+    # rpm -Uvh "$(curl -s "http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm")"
+}
+
+repo_configured() {
+    # TODO:: add check to see if not repo is already configured
+    # yum-config-manager --enable remi-php-xx
+
+    # return false
+    echo "0"
+}
+
+get_installed_remi_repos() {
+    repolist="yum repolist"
+    # repolist="cat ./php/yum.repolist.mock"
+
+    regex="remi-[0-9a-z]\+"
+
+
+    rpm -Uvh epel-release-6-8.noarch.rpm
+
+    # rpm -Uvh "$(curl -s "http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm")"
+}
+
 repo_configured() {
     # TODO:: add check to see if not repo is already configured
     # yum-config-manager --enable remi-php-xx

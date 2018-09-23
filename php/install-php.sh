@@ -8,7 +8,7 @@ main() {
     logo
     log info "This script is designed to serve as a version control system(VCS) for php."
     log info "type version (enter 'default' for standard repository package)"
-    log info "eg: 4.2 | 7.1, | 7.3"
+    log info "eg: 5.6 | 7.1, | 7.3"
 
     # loop prompt version (for validation)
     while : ; do
@@ -32,6 +32,10 @@ main() {
         log info "fetching PHP version: ${VERSION}"
         if [[ $(repo_check) != "1" ]]; then
             repo_install
+        fi
+
+        if [ "$VERSION_DIGITS" -gt "54" ] && [ "$VERSION_DIGITS" -lt "56" ]; then
+            repo_install68
         fi
 
         if [[ $(repo_utils_check) != "1" ]]; then
