@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source "./_shared/util.sh"
+
 repo_install() {
     line="yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm"
     log cmd "registering repos" "$line" & $($line > /dev/null 2>&1) || log error "failed to register repo" & spinner
@@ -16,6 +17,10 @@ repo_utils() {
 }
 
 repo_utils_check() {
+    line="yum list installed | grep -i yum-utils"
+
+    $($line > /dev/null 2>&1)
+
     # TODO:: grep for installed utils
 
     #return false
