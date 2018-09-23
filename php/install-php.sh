@@ -30,7 +30,7 @@ main() {
         log info "installing default repo version"
     else
         log info "fetching PHP version: ${VERSION}"
-        if [[ $(repo_check)!= "1" ]]; then
+        if [[ $(repo_check) != "1" ]]; then
             repo_install
         fi
 
