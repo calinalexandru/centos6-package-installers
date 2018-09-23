@@ -46,12 +46,14 @@ repo_install_remi6_check() {
 
 # for versions 5.3, 5.4, 5.5
 repo_install68() {
+    log info "downloading repo-release-68"
     line="wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
-    instr "$line" "download repo-release-68"
+    $($line > /dev/null 2>&1)
     # log cmd ".." "$line" & $($line > /dev/null 2>&1) || log error ".." & spinner
 
+    log info "unpacking repo-release-68"
     line="rpm -Uvh epel-release-6-8.noarch.rpm"
-    instr "$line" "unpacking repo-release-68"
+    $($line > /dev/null 2>&1)
 
     rm -fr epel-release-6-8.noarch.rpm
 
