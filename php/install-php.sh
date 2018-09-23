@@ -30,12 +30,16 @@ main() {
         log info "installing default repo version"
     else
         log info "fetching PHP version: ${VERSION}"
-        if [[ $(repo_missing) = "1" ]]; then
+        if [[ $(repo_check)!= "1" ]]; then
             repo_install
         fi
 
-        if [[ $(repo_not_configured) = "1" ]]; then
-            repo_enable $VERSION_DIGITS
+        if [[ $(repo_utils_check) != "1" ]]; then
+            repo_utils
+        fi
+
+        if [[ $(repo_configured) != "1" ]]; then
+            repo_enable "remi-php$VERSION_DIGITS"
         fi
     fi
 
