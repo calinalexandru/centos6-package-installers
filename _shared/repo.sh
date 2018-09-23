@@ -6,8 +6,14 @@ repo_install() {
 }
 
 repo_enable() {
+
     line="yum-config-manager --enable $1"
     log cmd "enabling repo" "$line" & $($line > /dev/null 2>&1) || log error "failed to enable repo" & spinner
+}
+
+repo_utils() {
+    line="yum -y install yum-utils"
+    log cmd "installing yum-utils" "$line" & $($line > /dev/null 2>&1) || log error "yum-util fail" & spinner
 }
 
 repo_disable() {
