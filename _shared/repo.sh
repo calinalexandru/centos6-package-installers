@@ -40,8 +40,6 @@ repo_not_configured() {
 
 get_installed_remi_repos() {
     repolist="yum repolist"
-    # mocked
-    repolist="cat php/yum.repolist.mock"
     regex="^remi-[0-9a-z]\+"
 
     # return
