@@ -2,6 +2,7 @@
 clear
 
 source ./_shared/util.sh
+source ./_shared/repo.sh
 
 main() {
     logo
@@ -29,22 +30,23 @@ main() {
         log info "installing default repo version"
     else
         log info "installing version: ${VERSION}"
-        yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm
-        yum -y install yum-utils
-        yum-config-manager --enable remi-php${VERSION_DIGITS}
+        if [[ $(repo_missing) = "1" ]]; then
+            repo_install
+        fi
+
+#        if [[ repo_not_configured = "1" ]]; then
+#            repo_enable $VERSION_DIGITS
+#        fi
     fi
 
     # install packages & base modules
     # include module lib
     modules=$(./php/modules-php.sh $VERSION_DIGITS)
-
     line="yum -y install php php$VERSION_DIGITS $modules"
-    log cmd "'$line'"
-    $(echo $line) || log error "packages could not be installed" && exit 2
-
-    #yum -y install php php-${VERSION_DIGITS}mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
+    log cmd "installing packages via: '$line'" & $($line > /dev/null 2>&1) || log error "failed to install php & co" & spinner
     #echo php -v
-    #echo "Goodbye!"
+
+    log info "Goodbye!"
 }
 
 main
