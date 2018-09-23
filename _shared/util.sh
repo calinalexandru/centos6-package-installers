@@ -34,6 +34,16 @@ get_php_version(){
     echo $(php -v | head -n 1 | grep -o "PHP [0-9].[0-9]\+" | sed "s/PHP //g")
 }
 
+php_installed() {
+    local check="php -v || echo 0"
+
+    if [ "$check" = "0" ]; then
+        echo "0"
+    else
+        echo "1"
+    fi
+}
+
 log() {
     pre=''
     if [[ "$1" = "error" ]]; then
