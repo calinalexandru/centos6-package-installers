@@ -10,7 +10,7 @@ main() {
 
     remi=$(get_installed_remi_repos)
     if [[ $remi != "" ]]; then
-        repo_disable $remi
+        repo_disable "$remi"
     fi
 
     v=$(only_digits $(get_php_version))
