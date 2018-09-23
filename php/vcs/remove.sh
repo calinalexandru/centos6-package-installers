@@ -6,12 +6,13 @@ source ./_shared/repo.sh
 
 main() {
     log info "cleaning up previous installations.."
-    log info "(swoosh)"
 
     remi=$(get_installed_remi_repos)
     if [[ $remi != "" ]]; then
         repo_disable "$remi"
     fi
+
+    log info "(swoosh)"
 
     v=$(only_digits $(get_php_version))
     if [ $v != "" ]; then
