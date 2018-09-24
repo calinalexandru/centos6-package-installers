@@ -50,9 +50,9 @@ main() {
 
     instr "$line" "installing php & co"
 
-    instr "php -v" "checking php version.."
+    instr "php -v" "displaying php version.."
     echo $(green)
-    echo $(php -v)
+    echo $(php -v || echo "we failed!")
     echo $(clear)
 
     log info "Goodbye!"
