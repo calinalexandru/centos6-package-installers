@@ -8,7 +8,7 @@ main() {
     log info "checking up previous PHP installations.."
     log info "(swoosh)"
 
-    if [ $(php_installed) = "1" ]; then
+    if [ php_installed = "1" ]; then
 
         log info "load repository list"
         remi=$(get_installed_remi_repos)
