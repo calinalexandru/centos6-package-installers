@@ -3,12 +3,12 @@
 # include util functs
 source ./_shared/util.sh
 source ./_shared/repo.sh
+source ./_shared/UI.sh
 
 main() {
-    log info "checking up previous PHP installations.."
-    log info "(swoosh)"
+    log head "remove" "looking for previous installations & configs"
 
-    if [ php_installed = "1" ]; then
+    if [ "$(php_installed)" = "1" ]; then
 
         log info "load repository list"
         remi=$(get_installed_remi_repos)
@@ -20,17 +20,18 @@ main() {
         if [ $v != "" ]; then
             modules=$(./php/lib/modules.sh $v)
             line="yum -y remove php php-* php$v $modules"
-            log cmd "removing packages" "$line" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
+            instr "$line" "deleting php & co.."
         else
             line="yum -y remove php php-*"
-            log cmd "removing packages" "$line" & $($line > /dev/null 2>&1) || log error "failed to remove php & co" & spinner
+            instr "$line" "deleting php & co.."
         fi
 
         line="yum clean all"
-        log cmd "attempting to clean repository" "$line" & $($line > /dev/null 2>&1) || log error "failed to clean repository" & spinner
-    else
-        log info "php not installed previously"
+        instr "$line" "clearing repository cache"
+        log emote "(swoosh)"
     fi
+
+    log info "machine is PHP-sanitized"
 }
 
 main

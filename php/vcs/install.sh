@@ -2,8 +2,11 @@
 source ./_shared/colours.sh
 source ./_shared/util.sh
 source ./_shared/repo.sh
+source ./_shared/UI.sh
 
 main() {
+    log head "install"
+
     log info "type version (enter 'default' for standard repository package)"
     log info "[ supported ]: 5.3 > 5.6, 7.0 > 7.3"
 

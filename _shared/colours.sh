@@ -35,6 +35,15 @@ light_blue_bg() {
     heco "\033[104m"
 }
 
+# Dark Gray
+dark_gray() {
+    echo "\033[90m"
+}
+
+dark_gray_bg() {
+    echo "\033[100m"
+}
+
 yellow() {
     heco "\033[33m"
 }
