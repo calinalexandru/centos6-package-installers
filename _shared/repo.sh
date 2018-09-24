@@ -75,7 +75,7 @@ get_installed_remi_repos() {
     regex="remi-[0-9a-z]\+"
 
     # return
-    line=$(echo $($repolist | grep -o $regex))
+    line="$(echo $($repolist | grep -o $regex))"
     log info "'$line'"
 
     echo "$line"

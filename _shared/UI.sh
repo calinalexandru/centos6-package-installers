@@ -97,8 +97,12 @@ log() {
     fi
 
     # 3rd argument case
-    if [[ $3 != "" ]]; then
-        spit "\n$(dim)'$3'$(clear)\n"
+    if [ "$3" != "" ]; then
+        if [ "$1" = "head" ]; then
+            spit "\n$(dim)'$3'$(clear)\n"
+        else
+            spit "$(dim)'$3'$(clear)\n"
+        fi
     fi
 
     if [ "$1" = "head" ]; then

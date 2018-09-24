@@ -5,15 +5,15 @@ source ./_shared/repo.sh
 source ./_shared/UI.sh
 
 main() {
-    log head "install"
+    log head "install" "preparing packages.."
 
     log info "type version (enter 'default' for standard repository package)"
     log info "[ supported ]: 5.3 > 5.6, 7.0 > 7.3"
 
     # loop prompt version (for validation)
     while : ; do
-        v=$(get_version_input)
-        vd=$(only_digits "$v")
+        v="$(get_version_input)"
+        vd="$(only_digits "$v")"
 
         if [ $(valid_version "$vd") = "0" ] && [ "$v" != "default" ]; then
             log warn "invalid version specified!"
@@ -24,7 +24,7 @@ main() {
     done
 
     # prepare packages
-    if [ "${v}" = "default" ]; then
+    if [ "$v" = "default" ]; then
         log info "configuring for default PHP version"
     else
         log info "configuring for PHP version: $v"
@@ -37,18 +37,18 @@ main() {
             fi
         fi
 
-        if [[ $(repo_utils_check) != "1" ]]; then
+        if [ "$(repo_utils_check)" != "1" ]; then
             repo_utils
         fi
 
-        if [[ $(repo_configured) != "1" ]]; then
+        if [ "$(repo_configured)" != "1" ]; then
             repo_enable "remi-php$vd"
         fi
     fi
 
     log info "fetching PHP version: $v"
 
-    modules=$(./php/lib/modules.sh $vd)
+    modules="$(./php/lib/modules.sh $vd)"
     line="yum -y install php php$vd$modules"
 
     instr "$line" "installing php & co"
