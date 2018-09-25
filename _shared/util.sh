@@ -3,6 +3,7 @@ source ./_shared/colours.sh
 source ./_shared/UI.sh
 source ./_shared/util/util.php.sh
 
+# TODO :: write output to file
 instr() {
     line="$1"
 
@@ -15,7 +16,6 @@ instr() {
 
 only_digits() {
     clean=$(echo "$1" | sed "s/[^0-9]//g")
-
     if [ "$clean" = "" ]; then
         echo "0"
     else

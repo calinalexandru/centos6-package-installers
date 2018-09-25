@@ -93,7 +93,7 @@ log() {
     # normal case
     else
 
-        spit "$(dim)$d$(clear) $pre $(dim)$d$(clear) $2$"
+        spit "$(dim)$d$(clear) $pre $(dim)$d$(clear) $2"
     fi
 
     # 3rd argument case

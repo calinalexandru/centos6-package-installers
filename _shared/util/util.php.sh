@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 get_php_version() {
-    echo $(php -v | head -n 1 | grep -o "PHP [0-9].[0-9]\+" | sed "s/PHP //g")
+    php -v | head -n 1 | grep -o "PHP [0-9].[0-9]\+" | sed "s/PHP //g"
 }
 
 php_installed() {

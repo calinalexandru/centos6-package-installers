@@ -16,8 +16,9 @@ main() {
             repo_disable "$remi"
         fi
 
-        v=$(only_digits get_php_version)
-        if [ $v != "" ]; then
+        v=$(only_digits "$(get_php_version)")
+
+        if [ "$v" != "" ]; then
             modules=$(./php/lib/modules.sh $v)
             line="yum -y remove php php-* php$v $modules"
             instr "$line" "deleting php & co.."
@@ -28,7 +29,7 @@ main() {
 
         line="yum clean all"
         instr "$line" "clearing repository cache"
-        log emote "(swoosh)"
+        log emote " swoosh "
     fi
 
     log info "machine is PHP-sanitized"

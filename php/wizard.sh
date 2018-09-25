@@ -3,6 +3,8 @@ source ./_shared/util.sh
 source ./_shared/repo.sh
 source ./_shared/UI.sh
 
+# TODO:: add makefile
+
 clear
 
 main() {
