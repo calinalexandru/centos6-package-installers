@@ -114,3 +114,7 @@ log() {
 logo() {
     echo -e $(light_blue) && cat ./php/ascii && echo -e $(clear)
 }
+
+clearScreen() {
+    echo -e '\0033\0143'
+}

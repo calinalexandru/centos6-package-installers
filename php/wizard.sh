@@ -4,15 +4,13 @@ source ./_shared/repo.sh
 source ./_shared/UI.sh
 
 # TODO:: add makefile
-
-clear
+clearScreen
 
 main() {
     logo
     log info "This script is designed to serve as a version control system (VCS) for php."
-    log note ".. here lies the notes .."
-    log note ".. some more notes .."
-
+    log note "..."
+    log note "..."
 
     # check for older installs
     ./php/vcs/remove.sh
