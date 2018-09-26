@@ -23,4 +23,7 @@ only_digits() {
     fi
 }
 
+unique() {
+    echo $1 | tr ' ' '\n' | sort -u | tr '\n' ' '
+}
 

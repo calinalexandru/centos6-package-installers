@@ -18,6 +18,7 @@ main() {
 
         v=$(only_digits "$(get_php_version)")
         v="$v $(echo $remi | grep -o "php[0-9]\+" | sed "s/[^0-9 ]//g")"
+        v=$(unique "$v")
 
         if [ "$v" != "" ]; then
             while IFS=' ' read -ra ADDR; do
