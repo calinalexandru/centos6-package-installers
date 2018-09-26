@@ -17,11 +17,17 @@ main() {
         fi
 
         v=$(only_digits "$(get_php_version)")
+        v="$v $(echo $remi | grep -o "php[0-9]\+" | sed "s/[^0-9 ]//g")"
 
         if [ "$v" != "" ]; then
-            modules=$(./php/lib/modules.sh $v)
-            line="yum -y remove php php-* php$v $modules"
-            instr "$line" "deleting php & co.."
+            while IFS=' ' read -ra ADDR; do
+                for i in "${ADDR[@]}"; do
+                    # process "$i"
+                    modules=$(./php/lib/modules.sh $i)
+                    line="yum -y remove php php-* php$i $modules"
+                    instr "$line" "deleting php $i & co.."
+                done
+            done <<< "$v"
         else
             line="yum -y remove php php-*"
             instr "$line" "deleting php & co.."
