@@ -1,13 +1,2 @@
-## php-vcs
-> This script is designed to serve as a version control system (VCS) for PHP.
+[php-vcs](https://github.com/calinalexandru/centos6-package-installers/tree/master/php)
 
-## interactive install
-
-Clone the repo first, then:
-```bash
-# set permissions
-sudo chmod -R +x php
-
-# run script
-sh ./php/wizard.sh
-```

@@ -1,4 +1,5 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
+
 source "./_shared/util.sh"
 
 repo_install6(){
