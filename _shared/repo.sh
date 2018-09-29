@@ -1,9 +1,10 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 source "./_shared/util.sh"
 
 repo_install6(){
     line="yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm"
     instr "$line" "installing repo-release-6"
+
 
     # log cmd "installing repo-release-6" "$line" & $($line > /dev/null 2>&1) || log error "failed" & spinner
 }
@@ -26,10 +27,9 @@ repo_utils() {
 }
 
 repo_utils_check() {
-    line="yum list installed | grep 'yum-utils'"
-    instr "$line" "yum-utils check"
+    line=$("yum list installed | grep 'yum-utils'")
 
-    echo $($line)
+    echo "$line"
 }
 
 # TODO:: enabler/disabler probably not working correctly
@@ -73,12 +73,12 @@ repo_configured() {
 
 get_configured_remi_repos() {
     repolist="yum-config-manager"
+#    repolist="cat ./yum-config-manager.mock"
 
     regex="remi-[0-9a-z]\+"
 
     # return
-    line=$repolist | grep -o $regex
-    instr "$line" "configured remi repos"
+    line= unique "$($repolist | grep -o $regex)"
 
     echo "$line"
 }
@@ -90,10 +90,10 @@ get_installed_remi_repos() {
     regex="remi-[0-9a-z]\+"
 
     # return
-    line=$repolist | grep -o $regex
+    line=$($repolist | grep -o $regex)
     # log info "'$line'"
     # execAL "$line"
-    instr "$line" "yum repolist"
+    # instr "$line" "yum repolist"
 
     echo "$line"
 }

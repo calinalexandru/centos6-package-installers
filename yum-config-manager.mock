@@ -1,0 +1,738 @@
+bugtracker_url = http://bugs.centos.org/set_project.php?project_id=19&ref=http://bugs.centos.org/bug_report_page.php?category=yum
+=============================== repo: remi-php71 ===============================
+[remi-php71]
+cachedir = /var/cache/yum/x86_64/6/remi-php71
+gpgcadir = /var/lib/yum/repos/x86_64/6/remi-php71/gpgcadir
+gpgdir = /var/lib/yum/repos/x86_64/6/remi-php71/gpgdir
+hdrdir = /var/cache/yum/x86_64/6/remi-php71/headers
+mirrorlist = http://cdn.remirepo.net/enterprise/6/php71/mirror
+persistdir = /var/lib/yum/repos/x86_64/6/remi-php71
+pkgdir = /var/cache/yum/x86_64/6/remi-php71/packages
+=============================== repo: remi-php72 ===============================
+[remi-php72]
+cachedir = /var/cache/yum/x86_64/6/remi-php72
+gpgcadir = /var/lib/yum/repos/x86_64/6/remi-php72/gpgcadir
+gpgdir = /var/lib/yum/repos/x86_64/6/remi-php72/gpgdir
+hdrdir = /var/cache/yum/x86_64/6/remi-php72/headers
+mirrorlist = http://cdn.remirepo.net/enterprise/6/php72/mirror
+persistdir = /var/lib/yum/repos/x86_64/6/remi-php72
+pkgdir = /var/cache/yum/x86_64/6/remi-php72/packages
+=============================== repo: remi-php73 ===============================
+[remi-php73]
+cachedir = /var/cache/yum/x86_64/6/remi-php73
+gpgcadir = /var/lib/yum/repos/x86_64/6/remi-php73/gpgcadir
+gpgdir = /var/lib/yum/repos/x86_64/6/remi-php73/gpgdir
+hdrdir = /var/cache/yum/x86_64/6/remi-php73/headers
+mirrorlist = http://cdn.remirepo.net/enterprise/6/php73/mirror
+persistdir = /var/lib/yum/repos/x86_64/6/remi-php73
+pkgdir = /var/cache/yum/x86_64/6/remi-php73/packages
+[alex@proteus centos6-package-installers]$ sudo yum-config-manager
+Loaded plugins: fastestmirror
+=================================================================================================== main ===================================================================================================
+[main]
+alwaysprompt = True
+assumeno = False
+assumeyes = False
+bandwidth = 0
+bugtracker_url = http://bugs.centos.org/set_project.php?project_id=19&ref=http://bugs.centos.org/bug_report_page.php?category=yum
+cache = 0
+cachedir = /var/cache/yum/x86_64/6
+clean_requirements_on_remove = False
+color = auto
+color_list_available_downgrade = dim,cyan
+color_list_available_install = normal
+color_list_available_reinstall = bold,underline,green
+color_list_available_upgrade = bold,blue
+color_list_installed_extra = bold,red
+color_list_installed_newer = bold,yellow
+color_list_installed_older = bold
+color_list_installed_reinstall = normal
+color_search_match = bold
+color_update_installed = normal
+color_update_local = bold
+color_update_remote = normal
+commands =
+debuglevel = 2
+depsolve_loop_limit = 100
+diskspacecheck = True
+distroverpkg = centos-release
+downloaddir =
+downloadonly =
+enable_group_conditionals = True
+enabled = True
+enablegroups = True
+errorlevel = 2
+exactarch = True
+exactarchlist =
+exclude =
+exit_on_lock = False
+failovermethod = priority
+ftp_disable_epsv = False
+gaftonmode = False
+gpgcheck = True
+group_package_types = mandatory,
+   default
+groupremove_leaf_only = False
+history_list_view = users
+history_record = True
+history_record_packages = yum,
+   rpm
+http_caching = all
+installonly_limit = 5
+installonlypkgs = kernel,
+   kernel-bigmem,
+   installonlypkg(kernel-module),
+   installonlypkg(vm),
+   kernel-enterprise,
+   kernel-smp,
+   kernel-debug,
+   kernel-unsupported,
+   kernel-source,
+   kernel-devel,
+   kernel-PAE,
+   kernel-PAE-debug
+installroot = /
+keepalive = True
+keepcache = False
+kernelpkgnames = kernel,
+   kernel-smp,
+   kernel-enterprise,
+   kernel-bigmem,
+   kernel-BOOT,
+   kernel-PAE,
+   kernel-PAE-debug
+loadts_ignoremissing = False
+loadts_ignorerpm = False
+localpkg_gpgcheck = False
+logfile = /var/log/yum.log
+mdpolicy = group:primary
+metadata_expire = 21600
+mirrorlist_expire = 86400
+multilib_policy = best
+obsoletes = True
+overwrite_groups = False
+password =
+persistdir = /var/lib/yum
+pluginconfpath = /etc/yum/pluginconf.d
+pluginpath = /usr/share/yum-plugins,
+   /usr/lib/yum-plugins
+plugins = True
+progess_obj =
+protected_multilib = True
+protected_packages = yum
+proxy = False
+proxy_password =
+proxy_username =
+query_install_excludes = False
+recent = 7
+recheck_installed_requires = True
+repo_gpgcheck = False
+reposdir = /etc/yum/repos.d,
+   /etc/yum.repos.d
+reset_nice = True
+retries = 10
+rpm_check_debug = True
+rpmverbosity = info
+showdupesfromrepos = False
+skip_broken = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+syslog_device = /dev/log
+syslog_facility = LOG_USER
+syslog_ident =
+throttle = 0
+timeout = 30.0
+tolerant = True
+tsflags =
+username =
+
+================================================================================================ repo: base ================================================================================================
+[base]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/base
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/base/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/base/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+hdrdir = /var/cache/yum/x86_64/6/base/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os&infra=stock
+mirrorlist_expire = 86400
+name = CentOS-6 - Base
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/base
+pkgdir = /var/cache/yum/x86_64/6/base/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+================================================================================================ repo: epel ================================================================================================
+[epel]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/epel
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/epel/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/epel/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+hdrdir = /var/cache/yum/x86_64/6/epel/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64
+mirrorlist_expire = 86400
+name = Extra Packages for Enterprise Linux 6 - x86_64
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/epel
+pkgdir = /var/cache/yum/x86_64/6/epel/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+=============================================================================================== repo: extras ===============================================================================================
+[extras]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/extras
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/extras/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/extras/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+hdrdir = /var/cache/yum/x86_64/6/extras/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=extras&infra=stock
+mirrorlist_expire = 86400
+name = CentOS-6 - Extras
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/extras
+pkgdir = /var/cache/yum/x86_64/6/extras/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================= repo: nodesource =============================================================================================
+[nodesource]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl = https://rpm.nodesource.com/pub_9.x/el/6/x86_64
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/nodesource
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/nodesource/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/nodesource/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/NODESOURCE-GPG-SIGNING-KEY-EL
+hdrdir = /var/cache/yum/x86_64/6/nodesource/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist =
+mirrorlist_expire = 86400
+name = Node.js Packages for Enterprise Linux 6 - x86_64
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/nodesource
+pkgdir = /var/cache/yum/x86_64/6/nodesource/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================= repo: passenger ==============================================================================================
+[passenger]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl = https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/x86_64
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/passenger
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/passenger/gpgcadir
+gpgcakey =
+gpgcheck = False
+gpgdir = /var/lib/yum/repos/x86_64/6/passenger/gpgdir
+gpgkey = https://packagecloud.io/gpg.key
+hdrdir = /var/cache/yum/x86_64/6/passenger/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist =
+mirrorlist_expire = 86400
+name = passenger
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/passenger
+pkgdir = /var/cache/yum/x86_64/6/passenger/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = True
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert = /etc/pki/tls/certs/ca-bundle.crt
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+========================================================================================== repo: passenger-source ==========================================================================================
+[passenger-source]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl = https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/SRPMS
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/passenger-source
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/passenger-source/gpgcadir
+gpgcakey =
+gpgcheck = False
+gpgdir = /var/lib/yum/repos/x86_64/6/passenger-source/gpgdir
+gpgkey = https://packagecloud.io/gpg.key
+hdrdir = /var/cache/yum/x86_64/6/passenger-source/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist =
+mirrorlist_expire = 86400
+name = passenger-source
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/passenger-source
+pkgdir = /var/cache/yum/x86_64/6/passenger-source/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = True
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert = /etc/pki/tls/certs/ca-bundle.crt
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================= repo: remi-php71 =============================================================================================
+[remi-php71]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/remi-php71
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/remi-php71/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/remi-php71/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+hdrdir = /var/cache/yum/x86_64/6/remi-php71/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://cdn.remirepo.net/enterprise/6/php71/mirror
+mirrorlist_expire = 86400
+name = Remi's PHP 7.1 RPM repository for Enterprise Linux 6 - x86_64
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/remi-php71
+pkgdir = /var/cache/yum/x86_64/6/remi-php71/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================= repo: remi-php72 =============================================================================================
+[remi-php72]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/remi-php72
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/remi-php72/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/remi-php72/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+hdrdir = /var/cache/yum/x86_64/6/remi-php72/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://cdn.remirepo.net/enterprise/6/php72/mirror
+mirrorlist_expire = 86400
+name = Remi's PHP 7.2 RPM repository for Enterprise Linux 6 - x86_64
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/remi-php72
+pkgdir = /var/cache/yum/x86_64/6/remi-php72/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================= repo: remi-php73 =============================================================================================
+[remi-php73]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/remi-php73
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/remi-php73/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/remi-php73/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+hdrdir = /var/cache/yum/x86_64/6/remi-php73/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://cdn.remirepo.net/enterprise/6/php73/mirror
+mirrorlist_expire = 86400
+name = Remi's PHP 7.3 RPM repository for Enterprise Linux 6 - x86_64
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/remi-php73
+pkgdir = /var/cache/yum/x86_64/6/remi-php73/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================== repo: updates ===============================================================================================
+[updates]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/updates
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/updates/gpgcadir
+gpgcakey =
+gpgcheck = True
+gpgdir = /var/lib/yum/repos/x86_64/6/updates/gpgdir
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+hdrdir = /var/cache/yum/x86_64/6/updates/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates&infra=stock
+mirrorlist_expire = 86400
+name = CentOS-6 - Updates
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/updates
+pkgdir = /var/cache/yum/x86_64/6/updates/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================== repo: vz-base ===============================================================================================
+[vz-base]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/vz-base
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/vz-base/gpgcadir
+gpgcakey =
+gpgcheck = False
+gpgdir = /var/lib/yum/repos/x86_64/6/vz-base/gpgdir
+gpgkey =
+hdrdir = /var/cache/yum/x86_64/6/vz-base/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://vzdownload.swsoft.com/download/mirrors/centos-6
+mirrorlist_expire = 86400
+name = vz-base
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/vz-base
+pkgdir = /var/cache/yum/x86_64/6/vz-base/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
+
+============================================================================================= repo: vz-updates =============================================================================================
+[vz-updates]
+bandwidth = 0
+base_persistdir = /var/lib/yum/repos/x86_64/6
+baseurl =
+cache = 0
+cachedir = /var/cache/yum/x86_64/6/vz-updates
+cost = 1000
+enabled = True
+enablegroups = True
+exclude =
+failovermethod = priority
+ftp_disable_epsv = False
+gpgcadir = /var/lib/yum/repos/x86_64/6/vz-updates/gpgcadir
+gpgcakey =
+gpgcheck = False
+gpgdir = /var/lib/yum/repos/x86_64/6/vz-updates/gpgdir
+gpgkey =
+hdrdir = /var/cache/yum/x86_64/6/vz-updates/headers
+http_caching = all
+includepkgs =
+keepalive = True
+mdpolicy = group:primary
+mediaid =
+metadata_expire = 21600
+metalink =
+mirrorlist = http://vzdownload.swsoft.com/download/mirrors/updates-released-ce6
+mirrorlist_expire = 86400
+name = vz-updates
+old_base_cache_dir =
+password =
+persistdir = /var/lib/yum/repos/x86_64/6/vz-updates
+pkgdir = /var/cache/yum/x86_64/6/vz-updates/packages
+proxy = False
+proxy_dict =
+proxy_password =
+proxy_username =
+repo_gpgcheck = False
+retries = 10
+skip_if_unavailable = False
+ssl_check_cert_permissions = True
+sslcacert =
+sslclientcert =
+sslclientkey =
+sslverify = True
+throttle = 0
+timeout = 30.0
+username =
