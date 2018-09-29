@@ -19,7 +19,7 @@ spinner()
 }
 
 clearLogFile(){
-    echo "" > "$logFilePath"
+    echo "" > $logFilePath
 }
 
 logToFile(){
@@ -27,8 +27,8 @@ logToFile(){
 }
 
 execAL() {
-    echo -e "$1" >> $logFilePath 2>&1
-    $1 >> $logFilePath 2>&1 &
+    echo -e "$1" >> "$logFilePath" 2>&1
+    $1 >> "$logFilePath" 2>&1
 }
 
 line_delimiter() {
