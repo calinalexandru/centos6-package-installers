@@ -30,6 +30,7 @@ repo_utils_check() {
     instr "$line" "check for yum-utils"
 }
 
+# TODO:: enabler/disabler probably not working correctly
 repo_disable() {
     line="yum-config-manager --disable $1"
     instr "$line" "disabling repo"
@@ -75,8 +76,10 @@ get_installed_remi_repos() {
     regex="remi-[0-9a-z]\+"
 
     # return
-    line="$(echo $($repolist | grep -o $regex))"
-    log info "'$line'"
+    line=$($repolist | grep -o $regex)
+    # log info "'$line'"
+    # execAL "$line"
+    instr "$line" "yum repolist"
 
     echo "$line"
 }

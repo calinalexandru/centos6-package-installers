@@ -6,12 +6,11 @@ source ./_shared/util/util.php.sh
 # TODO :: write output to file
 instr() {
     line="$1"
-    logFile="./php.vcs.log"
 
     if [ "$2" = "" ]; then
-        log cmd "" "$line" & $($line >> $logFile 2>&1) || log error "failed" & spinner
+        log cmd "" "$line" & execAL "$line" || log error "failed" & spinner
     else
-        log cmd "$2" "$line" & $($line >> $logFile 2>&1) || log error "failed" & spinner
+        log cmd "$2" "$line" & execAL "$line" || log error "failed" & spinner
     fi
 }
 

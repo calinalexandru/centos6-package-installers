@@ -4,7 +4,10 @@ source ./_shared/repo.sh
 source ./_shared/UI.sh
 
 # TODO:: add makefile
+# TODO:: add config file
+
 clearScreen
+clearLogFile
 
 main() {
     logo

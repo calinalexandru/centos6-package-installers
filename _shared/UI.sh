@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source ./_shared/colours.sh
 
+logFilePath="./php.vcs.log"
+
 spinner()
 {
     local pid=$!
@@ -16,12 +18,26 @@ spinner()
     printf "    \b\b\b\b"
 }
 
+clearLogFile(){
+    echo "" > "$logFilePath"
+}
+
+logToFile(){
+    echo -e "$1" >> $logFilePath 2>&1
+}
+
+execAL() {
+    echo -e "$1" >> $logFilePath 2>&1
+    $1 >> $logFilePath 2>&1 &
+}
+
 line_delimiter() {
     spit "$(paint "--------------------------------------------------------------------------------------" "inverted")"
 }
 
 spit() {
     echo -e $1
+    logToFile "$1"
 }
 
 paint() {
