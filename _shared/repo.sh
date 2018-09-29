@@ -27,7 +27,9 @@ repo_utils() {
 
 repo_utils_check() {
     line="yum list installed | grep -i yum-utils"
-    instr "$line" "check for yum-utils"
+    instr "$line" "yum-utils check"
+
+    echo $($line)
 }
 
 # TODO:: enabler/disabler probably not working correctly
