@@ -11,11 +11,12 @@ main() {
     if [ "$(php_installed)" = "1" ]; then
 
         log info "load repository list"
-        remi=$(get_installed_remi_repos)
-        if [[ $remi != "" ]]; then
-            repo_disable "$remi"
+        remi_configured=$(get_configured_remi_repos)
+        if [[ "$remi_configured" != "" ]]; then
+            repo_disable "$remi_configured"
         fi
 
+        remi=$(get_installed_remi_repos)
         v=$(only_digits "$(get_php_version)")
         v="$v $(echo $remi | grep -o "php[0-9]\+" | sed "s/[^0-9 ]//g")"
         v=$(unique "$v")

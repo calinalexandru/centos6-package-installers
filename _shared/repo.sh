@@ -26,7 +26,7 @@ repo_utils() {
 }
 
 repo_utils_check() {
-    line="yum list installed | grep -i yum-utils"
+    line="yum list installed | grep 'yum-utils'"
     instr "$line" "yum-utils check"
 
     echo $($line)
@@ -71,6 +71,18 @@ repo_configured() {
     echo "0"
 }
 
+get_configured_remi_repos() {
+    repolist="yum-config-manager"
+
+    regex="remi-[0-9a-z]\+"
+
+    # return
+    line=$repolist | grep -o $regex
+    instr "$line" "configured remi repos"
+
+    echo "$line"
+}
+
 get_installed_remi_repos() {
     repolist="yum repolist"
     # repolist="cat ./php/yum.repolist.mock"
@@ -78,7 +90,7 @@ get_installed_remi_repos() {
     regex="remi-[0-9a-z]\+"
 
     # return
-    line=$($repolist | grep -o $regex)
+    line=$repolist | grep -o $regex
     # log info "'$line'"
     # execAL "$line"
     instr "$line" "yum repolist"
