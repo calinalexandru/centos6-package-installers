@@ -22,5 +22,5 @@ main() {
     ./php/vcs/install.sh
 }
 
-#main
-echo $(get_configured_remi_repos)
+main
+
