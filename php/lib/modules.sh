@@ -12,7 +12,7 @@ module_name() {
 }
 
 main() {
-    modules=(pecl-mcrypt mbstring cli gd curl mysqlnd ldap zip fileinfo bz2 ctype calendar exif ftp gettext iconv json ldap mysqlnd pdo phar sockets sqlite3 tokenizer mysqli pdo_mysql pdo_sqlite xml)
+    modules=(pecl-mcrypt mbstring cli gd curl mysqlnd ldap zip fileinfo bz2 ctype calendar exif ftp gettext iconv json ldap mysqlnd pdo phar sockets sqlite3 tokenizer mysqli pdo_mysql pdo_sqlite xml pecl-memcache)
     c=""
     i=0
     while [ "x${modules[i]}" != "x" ]
