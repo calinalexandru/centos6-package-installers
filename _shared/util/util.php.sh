@@ -5,11 +5,9 @@ get_php_version() {
 }
 
 php_installed() {
-    local check=$(php -v || echo 0)
+    local check=$(php -v 2> /dev/null || echo 0)
 
-    if [ "$check" = "0" ]; then
-        echo "0"
-    else
+    if [ "$check" != "0" ]; then
         echo "1"
     fi
 }

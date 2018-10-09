@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+logFilePath="./php.vcs.log"
 
 source "./_shared/util.sh"
 
@@ -7,19 +8,25 @@ repo_install6(){
     instr "$line" "installing repo-release-6"
 
 
-    # log cmd "installing repo-release-6" "$line" & $($line > /dev/null 2>&1) || log error "failed" & spinner
+    # log cmd "installing repo-release-6" "$line" & $($line > $logFilePath 2>&1) || log error "failed" & spinner
+}
+
+repo_install_remi6_check() {
+    # yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm
+    line=$(yum list installed | grep remi-release | wc -l || echo 0)
+    echo "$line"
 }
 
 repo_install_remi6() {
     line="yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm"
     instr "$line" "installing repo-remi-6"
-#    log cmd "installing repo-remi-6" "$line" & $($line > /dev/null 2>&1) || log error "failed" & spinner
+#    log cmd "installing repo-remi-6" "$line" & $($line > $logFilePath 2>&1) || log error "failed" & spinner
 }
 
 repo_enable() {
     line="yum-config-manager --enable $1"
     instr "$line" "enabling repo"
-    # log cmd "enabling repo" "$line" & $($line > /dev/null 2>&1) || log error "failed to enable repo" & spinner
+    # log cmd "enabling repo" "$line" & $($line > $logFilePath 2>&1) || log error "failed to enable repo" & spinner
 }
 
 repo_utils() {
@@ -28,8 +35,8 @@ repo_utils() {
 }
 
 repo_utils_check() {
-    line=$("yum list installed | grep 'yum-utils'")
-
+    # ./_shared/repo.sh: line 42: yum list installed | grep 'yum-utils': command not found (!??!)
+    line=$(yum list installed | grep -i "yum-utils" | wc -l || echo 0)
     echo "$line"
 }
 
@@ -37,31 +44,24 @@ repo_utils_check() {
 repo_disable() {
     line="yum-config-manager --disable $1"
     instr "$line" "disabling repo"
-    # log cmd "disabling repo" "$line" & $($line > /dev/null 2>&1) || log error "failed to disable repo" & spinner
+    # log cmd "disabling repo" "$line" & $($line > $logFilePath 2>&1) || log error "failed to disable repo" & spinner
 }
 
-repo_install_remi6_check() {
-    # TODO:: add check for repos which are not already installed
-    # yum -y install http://rpms.remirepo.net/enterprise/remi-release-6.rpm
-
-    # return false
-    echo "1"
-}
 
 # for versions 5.3, 5.4, 5.5
 repo_install68() {
     log info "downloading repo-release-68"
     line="wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
-    $($line > /dev/null 2>&1)
-    # log cmd ".." "$line" & $($line > /dev/null 2>&1) || log error ".." & spinner
+    $($line > $logFilePath 2>&1)
+    # log cmd ".." "$line" & $($line > $logFilePath 2>&1) || log error ".." & spinner
 
     log info "unpacking repo-release-68"
     line="rpm -Uvh epel-release-6-8.noarch.rpm"
-    $($line > /dev/null 2>&1)
+    $($line > $logFilePath 2>&1)
 
-    rm -fr epel-release-6-8.noarch.rpm
+    rm -f epel-release-6-8.noarch.rpm
 
-    # log cmd ".." "$line" & $($line > /dev/null 2>&1) || log error ".." & spinner
+    # log cmd ".." "$line" & $($line > $logFilePath 2>&1) || log error ".." & spinner
 }
 
 repo_configured() {

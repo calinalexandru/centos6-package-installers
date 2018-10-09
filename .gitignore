@@ -4,3 +4,4 @@
 epel-
 *.log
 *.mocm
+deploy.sh

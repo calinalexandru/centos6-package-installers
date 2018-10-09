@@ -32,12 +32,15 @@ main() {
         if (( "$vd" >= "53" )) && (( "$vd" <= "56" )); then
             repo_install68
         elif (( "$vd" >= "70" )) && (( "$vd" <= "73" )); then
-            if [ $(repo_install_remi6_check) != "1" ]; then
+
+            log info "checking for remi-release"
+            if [ "$(repo_install_remi6_check)" == "0" ]; then
                 repo_install_remi6
             fi
         fi
 
-        if [ "$(repo_utils_check)" != "1" ]; then
+        log info "checking for “yum-utils”"
+        if [ "$(repo_utils_check)" == "0" ]; then
             repo_utils
         fi
 
@@ -58,7 +61,7 @@ main() {
     echo $(php -v || echo "we failed!")
     echo $(clear)
 
-    log info "Goodbye!"
+    log emote "Goodbye!"
 }
 
 main
