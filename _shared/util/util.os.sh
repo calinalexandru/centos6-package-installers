@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
 os_is_supported() {
+    os_name="$(get_os_name)"
+
+    if [ "$os_name" != "0" ]; then
+        echo "1"
+    else
+        echo "0"
+    fi;
 }
 
 get_os_name() {
@@ -8,7 +15,9 @@ get_os_name() {
         echo "ubuntu"
     elif [ "$(cat /etc/os-release | grep Centos | wc -l)" != "0" ]; then
         echo "centos"
-    fi;
+    else
+        echo "0"
+    fi
 }
 
 get_repo_cmd() {

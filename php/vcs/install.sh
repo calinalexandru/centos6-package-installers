@@ -5,7 +5,13 @@ source ./_shared/repo.sh
 source ./_shared/UI.sh
 
 main() {
-    log info "checking OS"
+    log info "verifying OS"
+    if [ "$(os_is_supported)" = "0" ]; then
+        log warn "bad OS"
+        exit
+    else
+        echo "all is well"
+    fi
 
 
     log head "install" "preparing packages.."
