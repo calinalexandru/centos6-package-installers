@@ -2,6 +2,7 @@
 source ./_shared/colours.sh
 source ./_shared/UI.sh
 source ./_shared/util/util.php.sh
+source ./_shared/util/util.os.sh
 
 # TODO :: write output to file
 instr() {

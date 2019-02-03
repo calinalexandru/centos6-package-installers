@@ -5,23 +5,32 @@ source ./_shared/repo.sh
 source ./_shared/UI.sh
 
 main() {
+    log info "checking OS"
+
+
     log head "install" "preparing packages.."
 
     log info "type version (enter 'default' for standard repository package)"
     log info "[ supported ]: 5.3 > 5.6, 7.0 > 7.3"
 
     # loop prompt version (for validation)
-    while : ; do
-        v="$(get_version_input)"
-        vd="$(only_digits "$v")"
+    if [ "$1" != "" ]; then
+        log info "cli-version: $1"
+        v=$1
+        vd="$(only_digits "$1")"
+    else
+        while : ; do
+            v="$(get_version_input)"
+            vd="$(only_digits "$v")"
 
-        if [ $(valid_version "$vd") = "0" ] && [ "$v" != "default" ]; then
-            log warn "invalid version specified!"
-            log warn "[ allowed ]: 5.3 > 5.6, 7.0 > 7.3"
-        else
-            break
-        fi
-    done
+            if [ $(valid_version "$vd") = "0" ] && [ "$v" != "default" ]; then
+                log warn "invalid version specified!"
+                log warn "[ allowed ]: 5.3 > 5.6, 7.0 > 7.3"
+            else
+                break
+            fi
+        done
+    fi
 
     # prepare packages
     if [ "$v" = "default" ]; then
@@ -64,4 +73,4 @@ main() {
     log emote "Goodbye!"
 }
 
-main
+#main $1
