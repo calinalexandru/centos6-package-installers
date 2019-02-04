@@ -11,7 +11,9 @@ os_is_supported() {
 }
 
 get_os_name() {
-    if [ "$(cat /etc/os-release | grep Ubuntu | wc -l)" != "0" ]; then
+    if [ ! -f /etc/os-release ]; then
+        echo "0"
+    elif [ "$(cat /etc/os-release | grep Ubuntu | wc -l)" != "0" ]; then
         echo "ubuntu"
     elif [ "$(cat /etc/os-release | grep Centos | wc -l)" != "0" ]; then
         echo "centos"

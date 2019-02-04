@@ -79,4 +79,4 @@ main() {
     log emote "Goodbye!"
 }
 
-#main $1
+main $1
